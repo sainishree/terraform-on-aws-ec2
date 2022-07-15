@@ -8,7 +8,7 @@ data  "aws_ec2_instance_type_offerings" "my_inst_type2"{
     values = ["t2.micro"]
   }
   filter {
-    name = "locatioin"
+    name = "location"
     values = [each.key]
   }
   location_type = "availability-zone"
