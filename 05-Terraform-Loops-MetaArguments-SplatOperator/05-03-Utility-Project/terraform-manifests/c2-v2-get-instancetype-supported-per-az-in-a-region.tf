@@ -19,3 +19,7 @@ output "output_v2_1" {
   value = toset([for i in data.aws_ec2_instance_type_offerings.my_inst_type2: i.instance_types])
 
 }
+output "output_v2_2"{
+  value = { for az, details in data.aws_ec2_instance_type_offerings.my_inst_type2: az => details.instance_types
+}
+}
